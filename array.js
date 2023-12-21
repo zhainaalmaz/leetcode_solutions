@@ -20,21 +20,41 @@
 //   )
 // );
 
-var countStudentsUnableToEat = function (students, sandwiches) {
-  let count = 0;
-  while (count < students.length) {
-    if (students[0] === sandwiches[0]) {
-      students.shift();
-      sandwiches.shift();
-      count = 0;
-    } else {
-      students.push(students.shift());
-      count++;
-    }
-  }
+// var countStudentsUnableToEat = function (students, sandwiches) {
+//   let count = 0;
+//   while (count < students.length) {
+//     if (students[0] === sandwiches[0]) {
+//       students.shift();
+//       sandwiches.shift();
+//       count = 0;
+//     } else {
+//       students.push(students.shift());
+//       count++;
+//     }
+//   }
 
-  return count;
-};
+//   return count;
+// };
 
-console.log(countStudentsUnableToEat([1, 1, 0, 0], [0, 1, 0, 1])); // 0
-console.log(countStudentsUnableToEat([1, 1, 1, 0, 0, 1], [1, 0, 0, 0, 1, 1])); //  3
+// console.log(countStudentsUnableToEat([1, 1, 0, 0], [0, 1, 0, 1])); // 0
+// console.log(countStudentsUnableToEat([1, 1, 1, 0, 0, 1], [1, 0, 0, 0, 1, 1])); //  3
+
+// var finalPrices = function (prices) {
+//   let result = [];
+//   for (let i = 0; i < prices.length; i++) {
+//     let isDiscounted = false;
+//     for (let j = i + 1; j < prices.length; j++) {
+//       if (prices[j] <= prices[i]) {
+//         result.push(prices[i] - prices[j]);
+//         isDiscounted = true;
+//         break;
+//       }
+//     }
+//     if (!isDiscounted) {
+//       result.push(prices[i]);
+//     }
+//   }
+//   console.log(result);
+// };
+
+// console.log(finalPrices([8, 4, 6, 2, 3]));
