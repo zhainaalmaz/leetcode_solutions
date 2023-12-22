@@ -58,3 +58,10 @@
 // };
 
 // console.log(finalPrices([8, 4, 6, 2, 3]));
+
+// var plusOne = function (digits) {
+//   const num = +digits.map(Number).join("") + 1;
+//   return Array.from(String(num), Number);
+// };
+
+// console.log(plusOne([1, 2, 3])); //[1,2,4]
