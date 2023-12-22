@@ -65,3 +65,58 @@
 // };
 
 // console.log(plusOne([1, 2, 3])); //[1,2,4]
+
+// let arr = [
+//   ["a", "b", "c"],
+//   ["d", "e", "f"],
+//   ["g", "h", "i"],
+// ];
+
+// function flatten(...arr) {
+//   let result = [];
+//   while (arr.length) {
+//     const elem = arr.shift();
+//     if (Array.isArray(elem)) {
+//       console.log("in");
+//       arr.unshift(...elem);
+//       continue;
+//     }
+//     result.push(...elem);
+//   }
+//   return result;
+// }
+
+// console.log(flatten(arr));
+
+// let arr = [
+//   [1, 2],
+//   [3, 4],
+//   [5, 6],
+// ];
+
+// let sum = 0;
+// for (let elem of arr) {
+//   const num = elem.reduce((acc, item) => {
+//     return acc + item;
+//   }, 0);
+//   sum += num;
+// }
+
+// console.log(sum);
+
+const arr = [0, [1, [2, [3], 4], 5, [6]], 7];
+
+function flatten(...arr) {
+  let result = [];
+  while (arr.length) {
+    const item = arr.shift();
+    if (Array.isArray(item)) {
+      arr.unshift(...item);
+      continue;
+    }
+    result.push(item);
+  }
+  return result;
+}
+
+console.log(flatten(arr));
