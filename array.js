@@ -104,19 +104,38 @@
 
 // console.log(sum);
 
-const arr = [0, [1, [2, [3], 4], 5, [6]], 7];
+// const arr = [0, [1, [2, [3], 4], 5, [6]], 7];
 
-function flatten(...arr) {
-  let result = [];
-  while (arr.length) {
-    const item = arr.shift();
-    if (Array.isArray(item)) {
-      arr.unshift(...item);
-      continue;
-    }
-    result.push(item);
+// function flatten(...arr) {
+//   let result = [];
+//   while (arr.length) {
+//     const item = arr.shift();
+//     if (Array.isArray(item)) {
+//       arr.unshift(...item);
+//       continue;
+//     }
+//     result.push(item);
+//   }
+//   return result;
+// }
+
+// console.log(flatten(arr));
+
+var findDisappearedNumbers = function (nums) {
+  let obj = {};
+  const newArr = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    obj[nums[i]] = true;
   }
-  return result;
-}
 
-console.log(flatten(arr));
+  for (let i = 1; i <= nums.length; i++) {
+    if (!obj[i]) {
+      newArr.push(i);
+    }
+  }
+  return newArr;
+};
+
+console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1])); //[5,6]
+console.log(findDisappearedNumbers([1, 1])); //[2]
