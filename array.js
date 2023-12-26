@@ -161,23 +161,36 @@
 // console.log(minDeletionSize(["cba", "daf", "ghi"]));
 // console.log(minDeletionSize(["zyx", "wvu", "tsr"]));
 
-var pivotIndex = function (nums) {
-  let totalSum = 0;
-  for (let i = 0; i < nums.length; i++) {
-    totalSum += nums[i];
-  }
+// var pivotIndex = function (nums) {
+//   let totalSum = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     totalSum += nums[i];
+//   }
 
-  let leftSum = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (leftSum === totalSum - leftSum - nums[i]) {
-      return i;
-    }
-    leftSum += nums[i];
-  }
+//   let leftSum = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (leftSum === totalSum - leftSum - nums[i]) {
+//       return i;
+//     }
+//     leftSum += nums[i];
+//   }
 
-  return -1;
-};
+//   return -1;
+// };
 
-console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
-console.log(pivotIndex([1, 2, 3]));
-console.log(pivotIndex([2, 1, -1]));
+// console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
+// console.log(pivotIndex([1, 2, 3]));
+// console.log(pivotIndex([2, 1, -1]));
+
+// var isPalindrome = function (x) {
+//   const arr = String(x).split("");
+//   while (arr.length > 1) {
+//     if (arr.shift() !== arr.pop()) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+
+// console.log(isPalindrome(121));
+// console.log(isPalindrome(-121));
