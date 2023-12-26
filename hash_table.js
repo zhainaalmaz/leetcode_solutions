@@ -25,3 +25,21 @@
 // };
 
 // console.log(twoSum([2, 7, 11, 15], 9));
+
+// var sumOfUnique = function (nums) {
+//   let obj = {};
+//   let sum = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     obj[nums[i]] = obj[nums[i]] + 1 || 1;
+//   }
+//   for (let elem in obj) {
+//     if (obj[elem] === 1) {
+//       sum += +elem;
+//     }
+//   }
+//   return sum;
+// };
+
+// console.log(sumOfUnique([1, 2, 3, 2]));
+// console.log(sumOfUnique([1, 1, 1, 1, 1]));
+// console.log(sumOfUnique([1, 2, 3, 4, 5]));

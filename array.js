@@ -121,21 +121,63 @@
 
 // console.log(flatten(arr));
 
-var findDisappearedNumbers = function (nums) {
-  let obj = {};
-  const newArr = [];
+// var findDisappearedNumbers = function (nums) {
+//   let obj = {};
+//   const newArr = [];
 
+//   for (let i = 0; i < nums.length; i++) {
+//     obj[nums[i]] = true;
+//   }
+
+//   for (let i = 1; i <= nums.length; i++) {
+//     if (!obj[i]) {
+//       newArr.push(i);
+//     }
+//   }
+//   return newArr;
+// };
+
+// console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1])); //[5,6]
+// console.log(findDisappearedNumbers([1, 1])); //[2]
+
+// var minDeletionSize = function (strs) {
+//   let count = 0;
+//   let k = strs[0].length;
+
+//   console.log(strs[0]);
+//   let n = strs.length;
+//   for (let i = 0; i < n; i++) {
+//     for (let j = 1; j < k; j++) {
+//       console.log(strs[j]);
+//       if (strs[j][i] < strs[j - 1][i]) {
+//         count++;
+//         break;
+//       }
+//     }
+//   }
+//   return count;
+// };
+
+// console.log(minDeletionSize(["cba", "daf", "ghi"]));
+// console.log(minDeletionSize(["zyx", "wvu", "tsr"]));
+
+var pivotIndex = function (nums) {
+  let totalSum = 0;
   for (let i = 0; i < nums.length; i++) {
-    obj[nums[i]] = true;
+    totalSum += nums[i];
   }
 
-  for (let i = 1; i <= nums.length; i++) {
-    if (!obj[i]) {
-      newArr.push(i);
+  let leftSum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (leftSum === totalSum - leftSum - nums[i]) {
+      return i;
     }
+    leftSum += nums[i];
   }
-  return newArr;
+
+  return -1;
 };
 
-console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1])); //[5,6]
-console.log(findDisappearedNumbers([1, 1])); //[2]
+console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
+console.log(pivotIndex([1, 2, 3]));
+console.log(pivotIndex([2, 1, -1]));
