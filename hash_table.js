@@ -44,21 +44,21 @@
 // console.log(sumOfUnique([1, 1, 1, 1, 1]));
 // console.log(sumOfUnique([1, 2, 3, 4, 5]));
 
-var longestConsecutive = function (nums) {
-  const unique = new Set(nums);
-  let longestStack = 0;
-  for (let num of unique) {
-    if (!unique.has(num - 1)) {
-      let currentNum = num;
-      let currentStack = 1;
-      while (unique.has(currentNum + 1)) {
-        currentStack++;
-        currentNum++;
-      }
-      longestStack = Math.max(longestStack, currentStack);
-    }
-  }
-  return longestStack;
-};
+// var longestConsecutive = function (nums) {
+//   const unique = new Set(nums);
+//   let longestStack = 0;
+//   for (let num of unique) {
+//     if (!unique.has(num - 1)) {
+//       let currentNum = num;
+//       let currentStack = 1;
+//       while (unique.has(currentNum + 1)) {
+//         currentStack++;
+//         currentNum++;
+//       }
+//       longestStack = Math.max(longestStack, currentStack);
+//     }
+//   }
+//   return longestStack;
+// };
 
-console.log(longestConsecutive([100, 4, 200, 1, 3, 2])); //4
+// console.log(longestConsecutive([100, 4, 200, 1, 3, 2])); //4
